@@ -9,20 +9,37 @@
     <p id="countdown"></p>
     <div id="cookingButtons">
         <button onclick="meatTimer()" id="meat">Cook meat</button>
+        <button onclick="krakenTimer()" id="kraken">Cook kraken</button>
     </div>
     <script>
-        var timeleft = 60;
+        var meatTime = 60;
+        var krakenTime = 120;
         function meatTimer() {
             var downloadTimer = setInterval(function function1(){
-                document.getElementById("countdown").innerHTML = timeleft + "&nbsp"+"seconds remaining";
+                document.getElementById("countdown").innerHTML = meatTime + "&nbsp"+"seconds remaining";
 
-                timeleft -= 1;
-                if(timeleft <= 0){
+                meatTime -= 1;
+                if(meatTime <= 0){
                     clearInterval(downloadTimer);
                     document.getElementById("countdown").innerHTML = "Time is up"
                 }
             }, 1000);
         }
-    </script>
+
+
+        
+    //     var krakenTime = 120;
+    //     function krakenTimer() {
+    //         var downloadTimer = setInterval(function function2() {
+    //             document.getElementsByid("countdown").innerHTML = krakenTime + "&nbsp"+"seconds remaining";
+
+    //             krakenTime -= 1;
+    //             if(krakenTime <=0){
+    //                 clearInterval(downloadTimer);
+    //                 document.getElementsByid("countdown").innerHTML = "Time is up"
+    //             }
+    //         }, 1000);
+    //     }
+    // </script>
 </body>
 </html>
