@@ -11,11 +11,13 @@
         <button onclick="meatTimer()" id="meat">Cook meat</button>
         <button onclick="krakenTimer()" id="kraken">Cook kraken</button>
         <button onclick="fishTimer()" id="fish">Cook fish</button>
+        <button onclick="trophyFishTimer()" id="trophyFish">Cook trophy fish</button>
     </div>
     <script>
         var meatTime = 60;
         var krakenTime = 120;
         var fishTime = 40;
+        var trophyFishTime = 90;
         function meatTimer() {
             var downloadTimer = setInterval(function function1(){
                 document.getElementById("countdown").innerHTML = meatTime + "&nbsp"+"seconds remaining";
@@ -44,6 +46,17 @@
 
                 fishTime -= 1;
                 if(fishTime <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("countdown").innerHTML = "Time is up"
+                }
+            }, 1000);
+        }
+        function trophyFishTimer() {
+            var downloadTimer = setInterval(function function4(){
+                document.getElementById("countdown").innerHTML = trophyFishTime + "&nbsp"+"seconds remaining";
+
+                trophyFishTime -= 1;
+                if(trophyFishTime <= 0){
                     clearInterval(downloadTimer);
                     document.getElementById("countdown").innerHTML = "Time is up"
                 }
