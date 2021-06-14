@@ -25,6 +25,17 @@
                 }
             }, 1000);
         }
+        function krakenTimer() {
+            var downloadTimer = setInterval(function function2(){
+                document.getElementById("countdown").innerHTML = krakenTime + "&nbsp"+"seconds remaining";
+
+                krakenTime -= 1;
+                if(krakenTime <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("countdown").innerHTML = "Time is up"
+                }
+            }, 1000);
+        }
 
 
         
